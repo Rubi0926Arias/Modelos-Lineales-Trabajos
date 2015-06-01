@@ -7,7 +7,7 @@
 # 2.1 Leer el archivo de datos data.txt, y analizar de que estructura de datos se trata.
 # Utilice la función read.table()
 
-dir <- "C:/Users/Rubi Arias/Desktop/Programa R/TrabajoR"
+dir <- "C:/Users/Rubi Arias/Desktop/Programa R/Modelos-Lineales-Trabajos"
 setwd(dir)
 
 data<-read.table("data.txt",header=TRUE,dec=",",sep="\t")
@@ -80,7 +80,7 @@ valores_perdidos<-numeric(ncol(data))
 porcentaje_valperd<-numeric(ncol(data))
 for(i in 1:ncol(data)){
   valores_perdidos[i]<-sum(is.na(data[,i]))
-  porcentaje_valperd[i]<-((100*vacios[i])/nrow(data))
+  porcentaje_valperd[i]<-((100*valores_perdidos[i])/nrow(data))
 }
 porcentaje_valperd
 
